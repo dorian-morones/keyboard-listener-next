@@ -4,12 +4,12 @@ import {
     ResultItemText
 } from './style/ResultItem_styles';
 
-const ResultItem = () => {
+const ResultItem = ({value}) => {
 
     return(
         <ResultItemContainer>
             <ResultItemText>
-                50
+                {value}
             </ResultItemText>
         </ResultItemContainer>
     )

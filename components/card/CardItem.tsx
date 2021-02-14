@@ -6,12 +6,12 @@ import {
     Text
 } from './style/CardItem_style';
 
-const CardItem = () => {
+const CardItem = ({title, text}) => {
 
     return(
         <CardContainer>
-            <CardTitle><Text>E.Key</Text></CardTitle>
-            <CardResult><Text>23</Text></CardResult>
+            <CardTitle><Text>{title}</Text></CardTitle>
+            <CardResult><Text>{text}</Text></CardResult>
         </CardContainer>
     )
 

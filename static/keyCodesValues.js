@@ -1,4 +1,4 @@
-const keyCodesValues = {
+export const keyCodesValues = {
     0: 'That key has no keycode',
     3: 'break',
     8: 'backspace / delete',
@@ -174,7 +174,7 @@ const keyCodesValues = {
     255: 'toggle touchpad',
 };
 
-const keyLocations = {
+export const keyLocations = {
     0: 'General keys',
     1: 'Left-side modifier keys',
     2: 'Right-side modifier keys',

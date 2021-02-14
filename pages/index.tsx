@@ -1,8 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Head from 'next/head'
 
 import ResultItem from '../components/resultItem/ResultItem';
 import CardItem from '../components/card/CardItem';
+
+import { keyLocations } from '../static/keyCodesValues';
 
 import {
   Row,
@@ -13,16 +15,21 @@ import {
 
 const Home = () => {
 
+  const [key, setKey] = useState<any>(null)
+  console.log("🚀 ~ file: index.tsx ~ line 17 ~ Home ~ key", key)
   const GlobalListener = useRef(null);
-  console.log("🚀 ~ file: index.tsx ~ line 17 ~ Home ~ GlobalListener", GlobalListener)
 
   const handleKeyPress = (event: any) => {
-    console.log("🚀 ~ file: index.tsx ~ line 20 ~ consthandleKeyPress ~ event", event)
+    setKey(event);
   }
 
   useEffect(() => {
     GlobalListener !== null && document.addEventListener('keydown', handleKeyPress);
   }, [GlobalListener]);
+
+  const handleLocationKEy = (location:number) => {
+    return keyLocations[location]
+  };
 
   return (
     <div ref={GlobalListener}>
@@ -33,12 +40,12 @@ const Home = () => {
 
       <Row>
         <LeftContainer>
-          <ResultItem />
+          <ResultItem value={key?.key} />
         </LeftContainer>
         <RigthContainer>
-          <CardItem />
-          <CardItem />
-          <CardItem />
+          <CardItem title="Code" text={key?.code} />
+          <CardItem title="KeyCode" text={key?.keyCode} />
+          <CardItem title="Location" text={handleLocationKEy(key?.location)} />
         </RigthContainer>
       </Row>
       <Footer>
