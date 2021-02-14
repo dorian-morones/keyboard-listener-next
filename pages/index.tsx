@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from 'react';
 import Head from 'next/head'
 
 import ResultItem from '../components/resultItem/ResultItem';
@@ -10,9 +11,21 @@ import {
   Footer
 } from './style/home_style';
 
-export default function Home() {
+const Home = () => {
+
+  const GlobalListener = useRef(null);
+  console.log("🚀 ~ file: index.tsx ~ line 17 ~ Home ~ GlobalListener", GlobalListener)
+
+  const handleKeyPress = (event: any) => {
+    console.log("🚀 ~ file: index.tsx ~ line 20 ~ consthandleKeyPress ~ event", event)
+  }
+
+  useEffect(() => {
+    GlobalListener !== null && document.addEventListener('keydown', handleKeyPress);
+  }, [GlobalListener]);
+
   return (
-    <div>
+    <div ref={GlobalListener}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -41,3 +54,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
