@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 
 import ResultItem from '../components/resultItem/ResultItem';
 import CardItem from '../components/card/CardItem';
@@ -13,7 +12,7 @@ import {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -36,7 +35,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          <img src="/vercel.svg" alt="Vercel Logo" />
         </a>
       </Footer>
     </div>

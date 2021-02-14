@@ -43,6 +43,7 @@ export const Footer = styled.footer.attrs(() => ({
 
   img {
     margin-left: 0.5rem;
+    width: 80px;
   }
 
   a {
