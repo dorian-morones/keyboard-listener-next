@@ -26,7 +26,7 @@ export const CardResult = styled.div.attrs(() => ({
   className: 'CardResult'
 }))`
   text-align: center;
-  padding: 5px;
+  padding: 10px 5px;
   border-radius: 8px 8px 0 0;
   font-weight: 500;
   color: #000;

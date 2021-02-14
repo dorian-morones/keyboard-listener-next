@@ -13,12 +13,15 @@ import {
   RigthContainer,
   Footer,
   FooterText,
-  FooterLink
+  FooterLink,
+  EmptyContainer,
+  EmptyMessage
 } from './style/home_style';
 
 const Home = () => {
 
   const [key, setKey] = useState<any>(null)
+  console.log("🚀 ~ file: index.tsx ~ line 22 ~ Home ~ key", key)
   const GlobalListener = useRef(null);
 
   const handleKeyPress = (event: any) => {
@@ -29,40 +32,50 @@ const Home = () => {
     GlobalListener !== null && document.addEventListener('keydown', handleKeyPress);
   }, [GlobalListener]);
 
-  const handleLocationKEy = (location:number) => {
+  const handleLocationKEy = (location: number) => {
     return keyLocations[location]
   };
 
   return (
     <div ref={GlobalListener}>
       <Head>
-        <title>Create Next App</title>
+        <title>KeyBoard Listener</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <GeneralContent>
-      <Row>
-        <LeftContainer>
-          <ResultItem value={key?.key} />
-        </LeftContainer>
-        <RigthContainer>
-          <CardItem title="Code" text={key?.code} />
-          <CardItem title="KeyCode" text={key?.keyCode} />
-          <CardItem title="Location" text={handleLocationKEy(key?.location)} />
-        </RigthContainer>
-      </Row>
-      <Footer>
-       <FooterText>Made with by <FooterLink color href="http://dorianmorones.com/">DorianMorones</FooterLink> | <FooterLink color href="https://github.com/dorian-morones/keyboard-listener-next">GitHub</FooterLink> | 
+
+        {key === null ? (
+          <EmptyContainer>
+            <EmptyMessage>Press any key</EmptyMessage>
+          </EmptyContainer>
+        ) : (
+            <Row>
+              <LeftContainer>
+                <ResultItem value={key?.key} />
+              </LeftContainer>
+              <RigthContainer>
+                <CardItem title="Code" text={key?.code} />
+                <CardItem title="KeyCode" text={key?.keyCode} />
+                <CardItem title="Location" text={handleLocationKEy(key?.location)} />
+              </RigthContainer>
+            </Row>
+          )
+
+        }
+
+        <Footer>
+          <FooterText>Made with by <FooterLink fill='true' href="http://dorianmorones.com/">DorianMorones</FooterLink> | <FooterLink fill='true' href="https://github.com/dorian-morones/keyboard-listener-next">GitHub</FooterLink> |
        <FooterLink
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" />
-        </FooterLink>
-       </FooterText>
-      </Footer>
+              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Powered by{' '}
+              <img src="/vercel.svg" alt="Vercel Logo" />
+            </FooterLink>
+          </FooterText>
+        </Footer>
       </GeneralContent>
     </div>
   )

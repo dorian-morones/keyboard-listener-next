@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+interface IFooterLink {
+  fill?: boolean;
+};
+
 export const GeneralContent = styled.div.attrs(() => ({
   className: 'GeneralContent'
 }))`
@@ -10,6 +14,28 @@ export const GeneralContent = styled.div.attrs(() => ({
   align-items: center;
   `;
 
+export const EmptyContainer = styled.div.attrs(() => ({
+  className: 'AlertMessage'
+}))`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 60px);
+`
+
+export const EmptyMessage = styled.p.attrs(() => ({
+  className: 'AlertMessage'
+}))`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  width: 70%;
+  height: 50px;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
+  border-radius: 15px;
+`;
 
 export const Row = styled.div.attrs(() => ({
   className: 'Row'
@@ -67,14 +93,14 @@ export const FooterText = styled.p.attrs(() => ({
 
 export const FooterLink = styled.a.attrs(() => ({
   className: 'FooterLink'
-}))`
+})) <IFooterLink>`
   margin: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   ${(props) => {
-    if(props?.color){
+    if (props?.fill) {
       return css`
         color: #43f;
       `
