@@ -1,5 +1,15 @@
 import styled, { css } from 'styled-components';
 
+export const GeneralContent = styled.div.attrs(() => ({
+  className: 'GeneralContent'
+}))`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  `;
+
 
 export const Row = styled.div.attrs(() => ({
   className: 'Row'
@@ -7,6 +17,7 @@ export const Row = styled.div.attrs(() => ({
   display: grid;
   grid-template-columns: 4fr 2fr;
   width: 80%;
+  height: calc(100% - 60px);
   padding: 10px 30px;
   `;
 
@@ -32,12 +43,12 @@ export const RigthContainer = styled.div.attrs(() => ({
 export const Footer = styled.footer.attrs(() => ({
   className: 'Footer'
 }))`
-  position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  height: 60px;
   border-top: 1px solid #eaeaea;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
@@ -46,9 +57,32 @@ export const Footer = styled.footer.attrs(() => ({
     width: 80px;
   }
 
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+`;
+
+export const FooterText = styled.p.attrs(() => ({
+  className: 'FooterText'
+}))`
+  display: flex;
+`
+
+export const FooterLink = styled.a.attrs(() => ({
+  className: 'FooterLink'
+}))`
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${(props) => {
+    if(props?.color){
+      return css`
+        color: #43f;
+      `
+    } else {
+      return css`
+        color: #000;
+      `
+    }
+
+  }};
 `;

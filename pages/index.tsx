@@ -7,16 +7,18 @@ import CardItem from '../components/card/CardItem';
 import { keyLocations } from '../static/keyCodesValues';
 
 import {
+  GeneralContent,
   Row,
   LeftContainer,
   RigthContainer,
-  Footer
+  Footer,
+  FooterText,
+  FooterLink
 } from './style/home_style';
 
 const Home = () => {
 
   const [key, setKey] = useState<any>(null)
-  console.log("🚀 ~ file: index.tsx ~ line 17 ~ Home ~ key", key)
   const GlobalListener = useRef(null);
 
   const handleKeyPress = (event: any) => {
@@ -38,6 +40,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <GeneralContent>
       <Row>
         <LeftContainer>
           <ResultItem value={key?.key} />
@@ -49,15 +52,18 @@ const Home = () => {
         </RigthContainer>
       </Row>
       <Footer>
-        <a
+       <FooterText>Made with by <FooterLink color href="http://dorianmorones.com/">DorianMorones</FooterLink> | <FooterLink color href="https://github.com/dorian-morones/keyboard-listener-next">GitHub</FooterLink> | 
+       <FooterLink
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{' '}
           <img src="/vercel.svg" alt="Vercel Logo" />
-        </a>
+        </FooterLink>
+       </FooterText>
       </Footer>
+      </GeneralContent>
     </div>
   )
 }

@@ -18,6 +18,6 @@ export const ResultItemContainer = styled.div.attrs(() => ({
 export const ResultItemText = styled.p.attrs(() => ({
   className: 'CustomButton'
 }))`
-font-size: 15rem;
+font-size: 140px;
 margin: 0;
 `
