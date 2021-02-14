@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const ResultItemContainer = styled.div.attrs(() => ({
+const ResultItemContainer = styled.div.attrs(() => ({
     className: 'CustomButton'
 }))`
   width: fit-content;
@@ -15,9 +15,4 @@ export const ResultItemContainer = styled.div.attrs(() => ({
   transition: all 0.5s;
   `
 
-export const ResultItemText = styled.p.attrs(() => ({
-  className: 'CustomButton'
-}))`
-font-size: 140px;
-margin: 0;
-`
+export default ResultItemContainer;

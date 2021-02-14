@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-    ResultItemContainer,
-    ResultItemText
-} from './style/ResultItem_styles';
+import ResultItemContainer from './style/ResultItemContainer';
+import ResultItemText from './style/ResultItemText';
 
 const ResultItem = ({value}) => {
 

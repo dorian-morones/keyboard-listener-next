@@ -6,18 +6,16 @@ import CardItem from '../components/card/CardItem';
 
 import { keyLocations } from '../static/keyCodesValues';
 
-import {
-  GeneralContent,
-  Row,
-  LeftContainer,
-  RigthContainer,
-  Footer,
-  FooterText,
-  FooterLink,
-  EmptyContainer,
-  EmptyMessage
-} from './style/home_style';
-
+import GeneralContent from './style/GeneralContent';
+import Row from './style/Row';
+ import LeftContainer from './style/LeftContainer';
+ import RigthContainer from './style/RigthContainer';
+ import Footer from './style/Footer';
+ import FooterText from './style/FooterText';
+ import FooterLink from './style/FooterLink';
+ import EmptyContainer from './style/EmptyContainer';
+ import EmptyMessage from './style/EmptyMessage';
+ 
 const Home = () => {
 
   const [key, setKey] = useState<any>(null)
