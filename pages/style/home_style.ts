@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface IFooterLink {
-  fill?: boolean;
+  opt?: string;
 };
 
 export const GeneralContent = styled.div.attrs(() => ({
@@ -100,7 +100,7 @@ export const FooterLink = styled.a.attrs(() => ({
   align-items: center;
 
   ${(props) => {
-    if (props?.fill) {
+    if (props?.opt === 'color') {
       return css`
         color: #43f;
       `

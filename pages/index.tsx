@@ -65,11 +65,12 @@ const Home = () => {
         }
 
         <Footer>
-          <FooterText>Made with by <FooterLink fill='true' href="http://dorianmorones.com/">DorianMorones</FooterLink> | <FooterLink fill='true' href="https://github.com/dorian-morones/keyboard-listener-next">GitHub</FooterLink> |
-       <FooterLink
+          <FooterText>Made with by <FooterLink opt='true' href="http://dorianmorones.com/">DorianMorones</FooterLink> | <FooterLink opt='color' href="https://github.com/dorian-morones/keyboard-listener-next">GitHub</FooterLink> |
+            <FooterLink
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               target="_blank"
               rel="noopener noreferrer"
+              opt='none'
             >
               Powered by{' '}
               <img src="/vercel.svg" alt="Vercel Logo" />
